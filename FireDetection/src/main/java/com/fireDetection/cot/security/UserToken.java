@@ -3,9 +3,7 @@ import com.fireDetection.cot.repositories.UserTokenRepository;
 import jakarta.nosql.mapping.Column;
 import jakarta.nosql.mapping.Entity;
 import jakarta.nosql.mapping.Id;
-
 import java.util.*;
-
 @Entity
 public class UserToken {
     @Id
@@ -22,11 +20,9 @@ public class UserToken {
     @Deprecated
     public UserToken() {
     }
-
     public String getEmail() {
         return email;
     }
-
     public Set<RefreshToken> getTokens() {
         if (tokens == null) {
             return Collections.emptySet();
@@ -37,7 +33,6 @@ public class UserToken {
         initiateTokens();
         this.tokens.add(refreshToken);
     }
-
     RefreshToken update(AccessToken accessToken, String refreshTokenText, UserTokenRepository repository) {
         initiateTokens();
         this.tokens.removeIf(r -> refreshTokenText.equals(r.getToken()));
@@ -46,7 +41,6 @@ public class UserToken {
         repository.save(this);
         return refreshToken;
     }
-
     void remove(String token) {
         initiateTokens();
         this.tokens.removeIf(r -> token.equals(r.getToken()));

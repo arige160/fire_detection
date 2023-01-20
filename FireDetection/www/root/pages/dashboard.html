@@ -3,20 +3,33 @@
 <head>
     <meta charset="utf-8">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="./styles/dashboard.css">
 </head>
 <body>
-    <h1 id="position_title">My Current Position</h1>
-    <p>
+    <div class="position">
+        <h4 id="position_title">User's Current Position</h4>
+        <p >
         <ul>
             <li class="position-info" id="altitude"></li>
             <li class="position-info" id="longitude"></li>
-            <li class="position-info" id="accuracy"></li>
             <li class="position-info" id="latitude"></li>
-            <li class="position-info" id="altitude-accuracy"></li>
-            <li class="position-info" id="speed"></li>
-            <li class="position-info" id="heading"></li>
-            <li class="position-info" id="timestamp"></li>
         </ul>
-    </p>
+        </p>
+    </div>
+
+<div class="sensor_result">
+    <div class="smoke">
+        <h3>Smoke sensor value</h3>
+        <p id="smoke_value">300</p>
+
+    </div>
+    <div class="flame">
+        <h3>Flame sensor value</h3>
+        <p id="flame_value">100</p>
+
+    </div>
+
+</div>
+
 </body>
 </html>

@@ -1,0 +1,12 @@
+.sensor_result{
+    display: flex;
+    justify-content:space-around;
+    height: 400px;
+}
+.smoke_value{
+    font-size: 36px;
+    align-content: center;
+}
+.flame_value{
+    font-size: 36px;
+}

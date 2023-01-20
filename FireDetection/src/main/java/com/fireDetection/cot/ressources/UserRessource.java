@@ -4,6 +4,7 @@ import com.fireDetection.cot.Exceptions.UserAlreadyExistsException;
 import com.fireDetection.cot.entities.user;
 import com.fireDetection.cot.Exceptions.UserNotFoundException;
 
+import com.fireDetection.cot.filters.Secured;
 import com.fireDetection.cot.repositories.UserRepository;
 import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;
@@ -28,6 +29,8 @@ public class UserRessource {
     @Inject
 
     @GET
+    @Secured
+    @RolesAllowed({"ADMIN", "USER"})
     public List<user> findUser() {
         return userRepository.findAll().collect(Collectors.toList());
     }
@@ -46,10 +49,9 @@ public class UserRessource {
             return  Response.status(400, e.getMessage()).build();
         }
     }
-
-
-
     @POST
+    @Secured
+    @RolesAllowed("ADMIN")
     @Path("/adduser")
     public Response addUser(@Valid user user) {
         try {
@@ -64,9 +66,24 @@ public class UserRessource {
         }
     }
     @GET
-    @Path("/{email}")
-    public user getUserById(@PathParam("email") String email) {
-        return userRepository.findById(email).orElseThrow(NOT_FOUND);
+    @Secured
+    @RolesAllowed({"ADMIN", "USER"})
+    @Path("/{email}/{password}")
+    public Response getUserById(@PathParam("email") String email,@PathParam("password") String password) {
+
+            if (!userRepository.findById(email).isPresent()) {
+                throw new UserNotFoundException("User with email " + email + " NOT FOUND!");
+            }
+            else{
+                if(userRepository.findById(email).get().getPassword() == password){
+                    return Response.ok("login is successful").build();
+                }
+                else{
+                    return Response.ok("password incorrect").build();
+                }
+            }
+
+
     }
     @DELETE
     @RolesAllowed("ADMIN")

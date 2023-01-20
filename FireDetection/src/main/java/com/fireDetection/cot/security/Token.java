@@ -6,7 +6,6 @@ import javax.json.bind.annotation.JsonbProperty;
 import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Supplier;
-
 public final class Token implements Supplier<String> {
     private final static Config config = ConfigProvider.getConfig();
     private final static int LEFT_LIMIT = config.getValue("token.left.limit", Integer.class);

@@ -11,14 +11,15 @@ const router = new VanillaRouter({type: history, routes: {
         .then(response => response.text())
         .then(htmlData => {
             document.getElementById('main-content').innerHTML = htmlData;
+
             if (e.detail.route === 'dashboard' && navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition( // success callback, error callback, options
                     (position) => {
-                        //Accuracy
-                        if (position.coords.accuracy == null) {
-                            document.getElementById("accuracy").innerHTML = "Accuacy not available";
+                        //Latitude
+                        if (position.coords.altitude == null) {
+                            document.getElementById("latitude").innerHTML = "Latitude not available";
                         } else {
-                            document.getElementById("accuracy").innerHTML = "Accuracy: "+position.coords.accuracy;
+                            document.getElementById("latitude").innerHTML = "Latitude: "+position.coords.altitude;
                         }
                         //Altitude
                         if (position.coords.altitude == null) {
@@ -32,30 +33,8 @@ const router = new VanillaRouter({type: history, routes: {
                         } else {
                             document.getElementById("longitude").innerHTML = "Longitude:"+position.coords.longitude;
                         }
-                        //altitudeAccuracy
-                        if (position.coords.altitudeAccuracy == null) {
-                            document.getElementById("altitude-Accuracy").innerHTML = "Altitude-Accuracy is  not available";
-                        } else {
-                            document.getElementById("altitude-accuracy").innerHTML = "Altitude-Accuracy:"+position.coords.altitudeAccuracy;
-                        }
-                        //Speed
-                        if (position.coords.speed == null) {
-                            document.getElementById("speed").innerHTML = "Speed is  not available";
-                        } else {
-                            document.getElementById("speed").innerHTML = "Speed:"+position.coords.speed;
-                        }
-                        //Heading
-                        if (position.coords.heading == null) {
-                            document.getElementById("heading").innerHTML = "Heading not available";
-                        } else {
-                            document.getElementById("heading").innerHTML = "Heading:"+position.coords.heading;
-                        }
-                        //Timestamp
-                        if (position.timestamp == null) {
-                            document.getElementById("timestamp").innerHTML = "Timestamp not available";
-                        } else {
-                            document.getElementById("timestamp").innerHTML = "Timestamp:"+position.timestamp;
-                        }
+                        //Send a sms to the emergency that contains longitude,latitude and altiltude
+
 
 
                     },
@@ -86,6 +65,7 @@ const router = new VanillaRouter({type: history, routes: {
         })
         .catch(e => console.log(e));
 });
+
 if("serviceWorker" in navigator){
     window.addEventListener("load", () => {
         navigator.serviceWorker.register("/scripts/serviceWorker.js")

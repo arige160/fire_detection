@@ -20,18 +20,13 @@ public class UserJWT {
     private static final Logger LOGGER = Logger.getLogger(UserJWT.class.getName());
     private static final Config config = ConfigProvider.getConfig();
     private static final String ISSUER = config.getValue("jwt.issuer",String.class);
-
     private static final String ROLES = config.getValue("jwt.claim.roles",String.class);
-
     private final String user;
-
     private final Set<String> roles;
-
     UserJWT(String user, Set<String> roles) {
         this.user = user;
         this.roles = roles;
     }
-
     public String getUser() {
         return user;
     }
@@ -42,7 +37,6 @@ public class UserJWT {
         }
         return roles;
     }
-
     static String createToken(user user, Token token, Duration duration) {
         final LocalDateTime expiration = LocalDateTime.now(ZoneOffset.UTC).plusMinutes(duration.toMinutes());
         Algorithm algorithm = Algorithm.HMAC512(token.get());
