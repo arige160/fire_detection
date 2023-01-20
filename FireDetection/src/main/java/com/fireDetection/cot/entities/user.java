@@ -3,7 +3,7 @@ import com.fireDetection.cot.FieldPropertyVisibilityStrategy;
 import jakarta.nosql.mapping.Column;
 import jakarta.nosql.mapping.Entity;
 import jakarta.nosql.mapping.Id;
-
+import com.fireDetection.cot.utils.Argon2Utils;
 import javax.json.bind.annotation.JsonbVisibility;
 import javax.persistence.Table;
 import java.io.Serializable;
@@ -87,6 +87,9 @@ public class user implements Serializable {
                 ", password='" + password + '\'' +
                 ", roles=" + roles +
                 '}';
+    }
+    public void hashPassword(String password, Argon2Utils argon2Utility) {
+        this.password = argon2Utility.hash(password.toCharArray());
     }
 
 
