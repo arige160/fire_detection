@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-Fire Deetection Applicaiot
+Fire Detection Applicaiot
 </h1>
 <h3 align="center">
 Cloud of Things Project
@@ -18,12 +18,19 @@ Cloud of Things Project
 <br>
 
 ## Context
-This project aims to prototype a home automation system with as many appliances and connected objects as possible. One other goal is to give homeowners total control over their homes to make interactions more effortless. The goals of this project are briefly: 
-- Conception and realize a complete prototype of a home automation system with the ability to connect and control it remotely.
-- Use different Inner and Outer network technologies: APIs, MQTT.
-- Use devices that are easy to install
-- Make it suitable for inexperienced users or even disabled users.
-- Scalability: The network needs to be scalable, which means that the possibility to add new objects to the IoT network should be easy, and the integration of the new object in the control application needs to be straightforward.
+Today, the security of spaces (closed and open) and of individuals has become unavoid-
+able, as they are exposed to many dangers. Among these dangers, we can mention the
+fires, which cause material losses and damage the human life.
+To minimize these losses of this danger, we must be able to detect the fires at an early
+stage using the technologies of the Internet of Things, taking into account several factors
+that can facilitate the detection phase.
+In the case of a kitchen, we can see that gas and flame are important factors that can
+identify the fire.
+We propose a system which must answer the following use cases:
+- Smoke detection: this task requires a smoke gas sensor with a well determined threshold.
+- flame detection: this task requires a flame sensor with a well determined threshold.
+- Alert in case of fire detection (either by gas or by flame) by a buzzer and a notification on
+the progressive web application (PWA).
 ## Live Demo
 As for now, you can test the application by downloading the `.apk` file from the releases.
 Also, you can test the application directly from your browser at https://homeautomationcot.me/ or https://api.homeautomationcot.me/. (note that some features are mobile-specific, and not all can be tested via the web version.)
