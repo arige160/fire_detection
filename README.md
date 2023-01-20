@@ -34,7 +34,7 @@ the progressive web application (PWA).
 ## Installation Guide
 If you want to run the application locally, please follow the following steps: 
 - Clone the repo: `https://github.com/arige160/fire_detection.git`
-- Install node RED on your Raspberry pi and then load the content of [flows.json](./iot/flows.JSON) into a new flow. Feel free to change the sensors and actuators pins, the MQTT broker, and the API link for getting a list of installed sensors.
+- Install node RED on your Raspberry pi . Feel free to change the sensors and actuators pins, the MQTT broker, and the API link for getting a list of installed sensors.
 - Run `standalone.bat` to start the server locally.
 - Move the cot-1.0-SNAPSHOT.war file into your `wildfly-preview-27.0.0.Final\standalone\deployments` .Once the deployement is done you can open open the project successfully.
 
@@ -45,7 +45,7 @@ Multiple technologies, plugins, packages and hardware sensors and actuators were
 - IoT:
   - Node RED
 - Frontend:
-  -Vanilla JS
+  - Vanilla JS
 - Server
   - Mosquitto Broker
 - Hardware
@@ -53,14 +53,13 @@ Multiple technologies, plugins, packages and hardware sensors and actuators were
   - Smoke Gas sensor MQ2
   - IR sensor
   - LED
-  
-  -Buzzer
+  - Buzzer
 ## Screenshots
-![Alt text](./imgs/application.png)
+![Alt text](./imgs/mainPage.png)
 ## Further Readings
 You can find more information and take a look at the architecture design with the following documents:
--  [User Guide](docs/scope%20statement.pdf)
--  [Design Document](docs/Design%20Document.pdf)
+-  [User Guide](Doc/scope%20statement.pdf)
+-  [Design Document](Doc/Design%20Document.pdf)
 ## Contribution
 This project was developed by Marwa Sadkaoui and Arij Flihi as part of a Cloud of Things project at Sup'Com.
 
