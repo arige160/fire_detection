@@ -58,8 +58,8 @@ Multiple technologies, plugins, packages and hardware sensors and actuators were
 ![Alt text](./imgs/mainPage.png)
 ## Further Readings
 You can find more information and take a look at the architecture design with the following documents:
--  [Scope statement](Doc/scope%20statement.pdf)
--  [Design Document](Doc/Design%20document.pdf)
+-  [Scope statement](Doc/scope_statement.pdf)
+-  [Design Document](Doc/Design_document.pdf)
 ## Contribution
 This project was developed by Marwa Sadkaoui and Arij Flihi as part of a Cloud of Things project at Sup'Com.
 
