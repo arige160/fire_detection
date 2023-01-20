@@ -1,0 +1,12 @@
+com\fireDetection\cot\Exceptions\UserForbiddenException.class
+com\fireDetection\cot\ressources\UserRessource.class
+com\fireDetection\cot\Exceptions\UserNotAuthorizedException.class
+com\fireDetection\cot\entities\user.class
+com\fireDetection\cot\DocumentManagerProducer.class
+com\fireDetection\cot\FieldPropertyVisibilityStrategy.class
+com\fireDetection\cot\Exceptions\UserNotAuthorizedToCreateAccountException.class
+com\fireDetection\cot\entities\Role.class
+com\fireDetection\cot\repositories\UserRepository.class
+com\fireDetection\cot\JAXRSConfiguration.class
+com\fireDetection\cot\Exceptions\UserAlreadyExistsException.class
+com\fireDetection\cot\Exceptions\UserNotFoundException.class
