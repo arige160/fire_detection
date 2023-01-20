@@ -46,6 +46,9 @@ public class UserRessource {
             return  Response.status(400, e.getMessage()).build();
         }
     }
+
+
+
     @POST
     @Path("/adduser")
     public Response addUser(@Valid user user) {
@@ -60,7 +63,6 @@ public class UserRessource {
             return Response.status(400, e.getMessage()).build();
         }
     }
-    //We need to add update password (oldPass, newPass)
     @GET
     @Path("/{email}")
     public user getUserById(@PathParam("email") String email) {
