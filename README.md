@@ -1,17 +1,15 @@
 <h1 align="center">
   <br>
-  Home Automation using CoT
+Fire Deetection Applicaiot
 </h1>
 <h3 align="center">
- Fire Detection Application
+Cloud of Things Project
 </h3>
 <div align="center">
   <h4>
     <a href="#Context">Context</a> |
     <a href="#Installation-Guide">Installation Guide</a> |
     <a href="#Technologies">Technologies</a> |
-    <a href="#Deployment-Server">Deployment Server</a> |
-    <a href="#Certification-and-Grading">Certification and Grading</a> |
    <a href="#Screenshots">Screenshots</a> |
     <a href="#Further-Readings">Further Readings</a> |
     <a href="#Contribution">Contribution</a>
