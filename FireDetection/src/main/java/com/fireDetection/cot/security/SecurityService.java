@@ -1,5 +1,4 @@
 package com.fireDetection.cot.security;
-
 import com.fireDetection.cot.Exceptions.*;
 import com.fireDetection.cot.entities.user;
 import com.fireDetection.cot.entities.Role;

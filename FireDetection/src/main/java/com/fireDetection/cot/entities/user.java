@@ -92,5 +92,4 @@ public class user implements Serializable {
         this.password = argon2Utility.hash(password.toCharArray());
     }
 
-
 }

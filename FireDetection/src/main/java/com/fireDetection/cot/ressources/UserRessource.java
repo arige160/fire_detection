@@ -3,7 +3,6 @@ package com.fireDetection.cot.ressources;
 import com.fireDetection.cot.Exceptions.UserAlreadyExistsException;
 import com.fireDetection.cot.entities.user;
 import com.fireDetection.cot.Exceptions.UserNotFoundException;
-
 import com.fireDetection.cot.filters.Secured;
 import com.fireDetection.cot.repositories.UserRepository;
 import javax.annotation.security.RolesAllowed;

@@ -73,6 +73,10 @@ public class mqtt {
                         sensorFlame.setFlame(parseFloat(mqttMessage.toString()));
 
                     }
+                    if (topic.equals("kitchen/fire")) {
+                        System.out.println(mqttMessage);
+
+                    }
                 }
 
                 @Override
@@ -83,6 +87,8 @@ public class mqtt {
             //Subscribe to kitchen/smoke and kitchen/infrared
             client.subscribe("kitchen/smoke");
             client.subscribe("kitchen/infrared");
+            client.subscribe("kitchen/fire");
+
         }
         catch (MqttException e) {
             System.out.println(e.getMessage());
